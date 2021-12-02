@@ -2,7 +2,6 @@ from controller import Robot
 from controller import LED
 
 robot = Robot()
-    
 
 timestep = int(robot.getBasicTimeStep())
 
@@ -125,8 +124,6 @@ while robot.step(timestep) != -1:
             
             flag2=0
         
-                
-        
         if st_right_value<450 and right_ext_value<450 and left_ext_value<450 :
             led["led_1"].set(1)
             led["led_2"].set(1)
@@ -142,7 +139,6 @@ while robot.step(timestep) != -1:
         if wall_right_down_value!=1000:
             led["led_3"].set(1)
                 
-            
         if wall_left_down_value!=1000:
             led["led_1"].set(1)
             
@@ -194,8 +190,6 @@ while robot.step(timestep) != -1:
                         led['led_2'].set(1)
                         led['led_3'].set(1)
   
-             
-                    
         elif right_value>950 and left_value>950:
             SetMotorSpeed(3,0)
             if wall_right_down_value!=1000:
@@ -227,10 +221,6 @@ while robot.step(timestep) != -1:
         elif left_value<950:
             SetMotorSpeed(0,-2)
             
-    
-                
-             
-
     if center_value>450:
         if cam_value>900:
             if wall_right_up_value<1000:
@@ -253,7 +243,6 @@ while robot.step(timestep) != -1:
                     rectify = pid(error)
                     SetMotorSpeed(3, rectify)
             
-                    
         else:
             if wall_right_up_value<1000 :
                 SetMotorSpeed(0,3 )
@@ -264,8 +253,6 @@ while robot.step(timestep) != -1:
             else:
                 SetMotorSpeed(0, 0)
        
-            
-            
     pass
     
   
